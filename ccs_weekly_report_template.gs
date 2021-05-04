@@ -11,12 +11,10 @@ function onOpen(e) {
 }
 
 function onInstall(e) {
-  
   onOpen(e);
 }
 
 function initProperties(){
-  uProp.deleteAllProperties();
   if(!uProp.getProperty("tempUrl")){
      uProp.setProperty("tempUrl", "https://docs.google.com/document/d/1jRBb-I7rWudK9bGpDn8TkE-QZhNtzynKWhqtJhsCDdw/edit#");
   }
@@ -40,8 +38,12 @@ function showConfig(){
 }
 
 function saveConfig(formObj){
-  PropertiesService.getUserProperties().setProperties(formObj);
-  
+  uProp.setProperties(formObj);
+  if(!formObj.bPageBreak){
+    uProp.setProperty("bPageBreak", "false");
+  }else{
+    uProp.setProperty("bPageBreak", "true");
+  }
 }
 
 function insertTemplate() {

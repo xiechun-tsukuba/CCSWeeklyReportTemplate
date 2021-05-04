@@ -11,7 +11,7 @@
         <div class="row mb-3 ">
           <h4 class="col-12">Template</h4>
           <div class="input-group">
-            <input type="text" id="tempUrl" class="form-control" placeholder="Docs URL" aria-label="Docs URL" aria-describedby="tempSrcHelp">
+            <input type="text" id="tempUrl" name="tempUrl" class="form-control" placeholder="Docs URL" aria-label="Docs URL" aria-describedby="tempSrcHelp">
             <!-- <button class="btn btn-outline-secondary has-spinner" type="button" id="tempUrlCheckBtn">
               <span class="spinner-border spinner-border-sm spinner" role="status" aria-hidden="true"></span>
               Check
@@ -102,19 +102,19 @@
         if(data.tempUrl){
           $('#tempUrl').val(data.tempUrl);
         }else{
-           $('#tempUrl').val("https://docs.google.com/document/d/1jRBb-I7rWudK9bGpDn8TkE-QZhNtzynKWhqtJhsCDdw/edit#");
+          $('#tempUrl').val("https://docs.google.com/document/d/1jRBb-I7rWudK9bGpDn8TkE-QZhNtzynKWhqtJhsCDdw/edit#");
         }
 
         if(data.dateFormat){
           $('#dateFormat').val(data.dateFormat);
         }else{
-           $('#dateFormat').val("YYYY-MM-DD");
+          $('#dateFormat').val("YYYY-MM-DD");
         }
 
         if(data.dateOffset){
           $('#dateOffset').val(parseInt(data.dateOffset));
         }else{
-           $('#dateOffset').val(1);
+          $('#dateOffset').val(1);
         }
 
         if(data.bPageBreak){
@@ -122,8 +122,6 @@
         }else{
           $('#bPageBreak').prop("checked", true);
         }
-
-        // console.log(data.dateFormat);
       }
 
       function runSaveConfig() {
